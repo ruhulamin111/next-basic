@@ -1,14 +1,41 @@
 import Meta from "../components/Meta";
 
-const Index = () => {
+const Index = ({ itemList }) => {
+
   return (
     <>
-      <Meta title="Basic next" keywords="basic, next" description="amy beng " />
+      {/* <Meta title="Basic next" keywords="basic, next" description="amy beng " /> */}
 
-      <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi perspiciatis, quam aperiam at alias a culpa obcaecati. Rerum, quo magnam.</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ducimus expedita quas aliquam mollitia temporibus maiores ab aliquid sequi quibusdam nam ut, ullam aperiam! Est adipisci illum laudantium dicta? Error?</p>
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, et.</h2>
+
+      <main className="container mt-4">
+        <div className="row">
+          {itemList.slice(0, 16).map((item, index) => (
+            <div className="col-md-4 mb-4" key={index}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+              <button className="btn btn-primary" >Details</button>
+            </div>
+          ))}
+
+        </div>
+      </main>
     </>
   );
 };
+
+
+export const getServerSideProps = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const itemList = await res.json();
+
+  return {
+    props: {
+      itemList
+    }
+  }
+}
+
+
 
 export default Index;

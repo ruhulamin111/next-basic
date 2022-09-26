@@ -24,11 +24,7 @@ const Header = () => {
                                     <a class="nav-link active" aria-current="page">About</a>
                                 </Link>
                             </li>
-                            <li class="nav-item">
-                                <Link href='/contact'>
-                                    <a class="nav-link active" aria-current="page">Contact</a>
-                                </Link>
-                            </li>
+
 
                         </ul>
                         <form class="d-flex" role="search">
