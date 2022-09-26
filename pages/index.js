@@ -1,12 +1,11 @@
+import Link from "next/link";
 import Meta from "../components/Meta";
 
 const Index = ({ itemList }) => {
 
   return (
     <>
-      {/* <Meta title="Basic next" keywords="basic, next" description="amy beng " /> */}
-
-      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, et.</h2>
+      <Meta title={itemList.title} keywords={itemList.title} description={itemList.body} />
 
       <main className="container mt-4">
         <div className="row">
@@ -14,7 +13,9 @@ const Index = ({ itemList }) => {
             <div className="col-md-4 mb-4" key={index}>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
-              <button className="btn btn-primary" >Details</button>
+              <Link href="/items/[id]" as={`/items/${item.id}`} >
+                <a className="btn btn-primary">Details</a>
+              </Link>
             </div>
           ))}
 
