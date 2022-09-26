@@ -3,10 +3,10 @@ import Link from "next/link";
 const Header = () => {
     return (
         <>
-            <nav class="navbar navbar-expand-lg container ">
+            <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
 
-                    <Link href='/home'>
+                    <Link href='/'>
                         <a class="navbar-brand" >Navbar</a>
                     </Link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li class="nav-item">
-                                <Link href='/home'>
+                                <Link href='/contact'>
                                     <a class="nav-link active" aria-current="page">Contact</a>
                                 </Link>
                             </li>
