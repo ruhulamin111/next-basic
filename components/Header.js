@@ -3,7 +3,7 @@ import Link from "next/link";
 const Header = () => {
     return (
         <>
-            <nav class="navbar navbar-expand-lg ">
+            <nav class="navbar   navbar-expand-lg ">
                 <div class="container-fluid">
 
                     <Link href='/'>
